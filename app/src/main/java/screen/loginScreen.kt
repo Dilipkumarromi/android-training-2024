@@ -1,7 +1,10 @@
 package screen
 
+import android.text.Layout.Alignment
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -15,11 +18,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @Composable
-fun loginScreen() {
+fun loginScreen(navController: NavHostController) {
     val username = remember {
         mutableStateOf("")
     }
@@ -27,15 +33,18 @@ fun loginScreen() {
         mutableStateOf("")
     }
     Column(
-        modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color(0xFFEFF4FA)),
+        verticalArrangement = Arrangement.Center,
+
 
     ) {
         Text(
             text = "Login",
             fontSize = 20.sp,
-            modifier = Modifier.fillMaxWidth()
-
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Center
 
         )
         OutlinedTextField(value = username.value, onValueChange = {
@@ -70,11 +79,19 @@ fun loginScreen() {
                 Text(text = "enter the password")
             }
         )
-        
-        OutlinedButton(onClick = { /*TODO*/ },
-            modifier = Modifier.fillMaxWidth().padding(10.dp)
+        Text(text = "Forgot password", fontSize = 10.sp,
+//            modifier = Modifier.align(alignment = Alignment.End),
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            textAlign = TextAlign.End,
+
+        )
+        OutlinedButton(onClick = { navController.navigate("Dashboard")},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
             ) {
             Text(text = "Login")
+
         }
     }
 }
