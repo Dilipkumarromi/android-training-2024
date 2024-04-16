@@ -14,7 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androidtraining.ui.theme.AndroidTrainingTheme
-import playlist.day_2.day_padding_Or_margin
+import playlist.day_2.day_2_class
+
 import screen.AlertDialogScreen
 import screen.CourseList
 import screen.DailogScreen
@@ -35,8 +36,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                textBoxScreen()
-                    day_padding_Or_margin()
+                day_2_class();
+
                 }
 
             }
