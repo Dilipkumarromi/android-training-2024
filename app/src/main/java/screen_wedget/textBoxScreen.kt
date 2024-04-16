@@ -28,7 +28,7 @@ fun textBoxScreen() {
     ) {
         OutlinedTextField(value = firstName.value, modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 10.dp, end = 20.dp),
+            .padding(start = 10.dp, end = 30.dp),
             onValueChange = {
             firstName.value=it
         },
