@@ -1,0 +1,15 @@
+//                    loginScreen()
+//                    EachRow()
+//                    enrollment()
+                    CourseList()
+//                    DailogScreen()
+//
+//                    val navController= rememberNavController()
+//                    NavHost(navController = navController, startDestination ="Home" ){
+//                        composable("Home"){
+//                            loginScreen(navController)
+//                        }
+//                        composable("Dashboard"){
+//                            Dashboard(navController)
+//                        }
+//                    }

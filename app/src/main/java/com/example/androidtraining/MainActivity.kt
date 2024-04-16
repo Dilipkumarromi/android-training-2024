@@ -14,9 +14,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androidtraining.ui.theme.AndroidTrainingTheme
+import screen.AlertDialogScreen
+import screen.CourseList
+import screen.DailogScreen
 import screen.Dashboard
 import screen.loginScreen
 import screen.EachRow
+import screen.student.enrollment
+import screen_wedget.textBoxScreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,17 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    loginScreen()
-//                    EachRow()
-                    val navController= rememberNavController()
-                    NavHost(navController = navController, startDestination ="Home" ){
-                        composable("Home"){
-                            loginScreen(navController)
-                        }
-                        composable("Dashboard"){
-                            Dashboard(navController)
-                        }
-                    }
+                textBoxScreen()
                 }
 
             }
